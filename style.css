@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("https://facts.net/wp-content/uploads/2020/11/rock-paper-scissors.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 100vh;
+}
+h1{
+    text-align: center;
+    color: wheat;
+    margin-top: 5%;
+    font-style: italic;
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
+.card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.computer,.player{
+    background-color: wheat;
+    width: 20%;
+    height:40%;
+    padding:15px;
+    border-radius: 2%;
+    border-style: solid;
+    border-color: silver;
+}
+h2,p{
+    text-align: center;
+}
+h3{
+    margin-left:10px;
+}
+.result{
+    color: green;
+    background-color: silver;
+    padding: 5px 5px;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 2%;
+}
+.player button{
+    margin-left: 10%;
+}
+
+#start,#over{
+    margin-left: 48%;
+}
+button{
+    background-color: bisque;
+    padding: 7px;
+    font-weight: bold;
+}
