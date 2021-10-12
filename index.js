@@ -52,13 +52,13 @@ function playRound(playerSelection, computerSelection) {
   }
   else if (playerSelection === "scissor" && computerSelection === "rock") {
 
-    playerPoints++;
-    userPoints.innerHTML = playerPoints;
+    computerPoints++;
+    machinePoints.innerHTML = computerPoints;
   }
   else if (playerSelection === "rock" && computerSelection === "scissor") {
 
-    computerPoints++;
-    machinePoints.innerHTML = computerPoints;
+    playerPoints++;
+    userPoints.innerHTML = playerPoints;
   }
   count--;
 
