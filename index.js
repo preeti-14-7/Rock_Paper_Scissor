@@ -1,6 +1,6 @@
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
-const scisor = document.querySelector('#scisor');
+const scissor = document.querySelector('#scissor');
 const startGame = document.querySelector('#start');
 const computerChhosen = document.querySelector('.computerChoice');
 const userPoints = document.querySelector('.userpoints');
@@ -11,7 +11,7 @@ function computerPlay() {
   let textArray = [
     'rock',
     'paper',
-    'scisor'
+    'scissor'
   ];
   let randomNumber = textArray[Math.floor(Math.random() * textArray.length)];
   return randomNumber;
@@ -22,12 +22,14 @@ function computerPlay() {
 let computerSelection;
 let computerPoints = 0;
 let playerPoints = 0;
-let count = 10;
+let count = 8;
 
 
 
 //playround
 function playRound(playerSelection, computerSelection) {
+  
+   
 
   if (playerSelection === "rock" && computerSelection === "paper") {
     computerPoints++;
@@ -39,21 +41,21 @@ function playRound(playerSelection, computerSelection) {
     playerPoints++;
     userPoints.innerHTML = playerPoints;
   }
-  else if (playerSelection === "scisor" && computerSelection === "paper") {
+  else if (playerSelection === "scissor" && computerSelection === "paper") {
     playerPoints++;
     userPoints.innerHTML = playerPoints;
   }
-  else if (playerSelection === "paper" && computerSelection === "scisor") {
+  else if (playerSelection === "paper" && computerSelection === "scissor") {
 
     computerPoints++;
     machinePoints.innerHTML = computerPoints;
   }
-  else if (playerSelection === "scisor" && computerSelection === "rock") {
+  else if (playerSelection === "scissor" && computerSelection === "rock") {
 
     playerPoints++;
     userPoints.innerHTML = playerPoints;
   }
-  else if (playerSelection === "rock" && computerSelection === "scisor") {
+  else if (playerSelection === "rock" && computerSelection === "scissor") {
 
     computerPoints++;
     machinePoints.innerHTML = computerPoints;
@@ -87,8 +89,8 @@ function paperClick() {
   playRound(playerSelection, computerSelection);
 }
 
-function scisorClick() {
-  playerSelection = "scisor";
+function scissorClick() {
+  playerSelection = "scissor";
   computerSelection = computerPlay();
   computerChhosen.innerHTML = computerSelection;
   // console.log("Player " + playerSelection + " computer " + computerSelection);
@@ -111,7 +113,7 @@ function winner() {
 function exitGame() {
   rock.disabled = true;
   paper.disabled = true;
-  scisor.disabled = true;
+  scissor.disabled = true;
 }
 
 
@@ -119,16 +121,17 @@ function exitGame() {
 function game() {
   rock.disabled = false;
   paper.disabled = false;
-  scisor.disabled = false;
-  count = 10;
+  scissor.disabled = false;
+  count = 8;
   playerPoints = 0;
   computerPoints = 0;
   userPoints.innerHTML = playerPoints;
   machinePoints.innerHTML = computerPoints;
   computerChhosen.innerHTML = 'you play first';
+  result.innerHTML = "match going";
   rock.addEventListener('click', rockClick);
   paper.addEventListener('click', paperClick);
-  scisor.addEventListener('click', scisorClick);
+  scissor.addEventListener('click', scissorClick);
 
   //console.log("playerselection" + playerSelection);
   //console.log("computer"+ computerSelection);
